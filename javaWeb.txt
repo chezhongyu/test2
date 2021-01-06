@@ -1,0 +1,47 @@
+1. IDEA的安装与破解
+2. Tomcat服务器与IDEA如何集成
+3. JavaWeb工程的结构
+   src: 写Java源代码
+   web文件夹：可以放一些静态的资源(html css javascript 图片 jsp)
+        html与jsp的区别？ html是静态网页   jsp动态页面(与数据库是有交互的)
+   web.xml它是整个Web应用的一个核心的配制文件,这个文件对用户来说是不可见的
+4.使用包对项目结构的划分：表现层(展现)  业务层(业务逻辑)   持久层(dao数据访问对象)
+  controller表示控制层   dao表示持久层   db:利用jdbc对数据库操作
+  service业务层   util所有的工具类都要放到此包中   test用来测试
+  bean：就是一个普通的Java类只包含get/set方法
+        规范：bean的名称与表名相同   bean中的属性名要与表中的列名对应
+
+5.开发项目的流程：
+    5.1 创建数据库表
+    5.2 创建JavaBean
+    5.3 创建AdminMapping一定要实现EntityMapping接口
+    5.4 创建持久层(接口 实现类)
+    5.5 创建业务层
+    5.6 创建html页面(页面向后台的送请求，谁来处理呢？)
+
+
+6.通用工具类的说明：
+6.1 datainfo.properties 它是项目中的配制文件，作用是配制连接数据库的信息
+6.2 log4j.properties : Log4J的配制文件
+    Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台
+6.3 PropertyUtil：读取配制文件的信息的工具类
+6.4 DBManager 连接数据库的工具类，只负责数据库的连接。getConnection()方法：Connection
+
+7.Servlet(它是服务器端的应用程序)
+    作用：它可以处理客户端的请求，并调用之前的Service层，最后将结果响应给客户端
+
+8.请求的转发与重定向（它可以实现资源的跳转）
+  面试题：请求转发与重定向的区别
+  请求转发：发送一次请求
+  req.getRequestDispatcher("/user/get").forward(req,resp);
+  注意：URL地址是第一次客户端向服务器端发送的url地址
+        http://localhost:8088/foreknow_webdemo/user/add
+        转发只能转发到当前站内(当前项目)资源
+
+  重定向向：发送二次请求
+   resp.sendRedirect("/foreknow_webdemo/user/get");
+   注意：它会直接定向到目标资源
+         http://localhost:8088/foreknow_webdemo/user/get
+         重定向可以定向到任意资源
+         resp.sendRedirect("htt://www.163.com");
+
