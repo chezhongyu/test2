@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
         if(admin!=null){
             //session.setAttribute("admin",admin);
             //转发资源
-            req.getRequestDispatcher("/index.html").forward(req,resp);
+            req.getRequestDispatcher("/index.jsp").forward(req,resp);
         }else{
             out.println("no data");
         }

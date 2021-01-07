@@ -14,6 +14,7 @@ public class MappingFactory {
     //有一个xxxMapping就建一个常量
     public  static final String ADMIN_MAPPING = "adminMapping";
     public  static final String GUEST_MAPPING = "guestMapping";
+    public  static final String STAFF_MAPPING = "staffMapping";
 
     private MappingFactory(){}
     public static MappingFactory getMappingFactory() {
@@ -23,6 +24,7 @@ public class MappingFactory {
             //有一个xxxMapping就添加一个mappingFactory.maps.put(    ，new xxxMapping())
             mappingFactory.maps.put(ADMIN_MAPPING,new AdminMapping());
             mappingFactory.maps.put(GUEST_MAPPING,new GuestbookMapping());
+            mappingFactory.maps.put(STAFF_MAPPING,new StaffMapping());
         }
         return mappingFactory;
     }

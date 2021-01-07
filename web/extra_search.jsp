@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+<%@ page import="java.util.List" %>
+<%@ page import="com.foreknow.bean.Guestbook" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@taglib prefix="pager" uri="http://blog.zjjlive.net/zjjlive/tags/pager" %>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -8,7 +12,10 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
-
+<%
+	String path = request.getContextPath();
+	request.setAttribute("path",path);
+%>
 <head>
 
 	<meta charset="utf-8" />
@@ -1025,7 +1032,7 @@
 
 						<li class="active">
 							
-							<a href="extra_search.jsp">员工信息 </a>
+							<a href="/test2/usermanager?q=list">员工信息 </a>
 
 						</li>
 
@@ -1469,7 +1476,7 @@
 
 							</li>
 
-							<li><a href="extra_search.jsp">员工信息</a></li>
+							<li><a href="/test2/sta?q=list">员工信息</a></li>
 
 						</ul>
 
@@ -1479,6 +1486,78 @@
 
 				</div>
 
+				<div class="container">
+
+					username:${sessionScope.admin.username}
+					<%-- 如果将数据保存到request中，页面中就可以使用requestScope   --%>
+					<%-- username:${requestScope.admin.username}--%>
+				</div>
+
+				<%-- table>tr*2>td*6    tab --%>
+				<table class="table table-hover" >
+					<tr>
+						<td>id</td>
+						<td>员工号</td>
+						<td>姓名</td>
+						<td>性别</td>
+						<td>年龄</td>
+						<td>身高</td>
+						<td>出生日期</td>
+						<td>民族</td>
+						<td>籍贯</td>
+						<td>联系方式</td>
+						<td>电子邮箱</td>
+						<td>政治面貌</td>
+						<td>部门</td>
+						<td>岗位</td>
+						<td>入职日期</td>
+						<td>工作日期</td>
+						<td>操作</td>
+
+
+					</tr>
+					<%--  <%--%>
+					<%--    //可以写java代码--%>
+					<%--    List<Object> list = (List<Object>)request.getAttribute("list");--%>
+					<%--    for(int i=0;i<list.size();i++){--%>
+					<%--        Guestbook gb = (Guestbook) list.get(i);--%>
+
+					<%--  %>--%>
+					<%--${key}--%>
+					<%--遍历list里面的数据--%>
+					<c:forEach var="ac" items="${list}">
+						<tr>
+							<td>${ac.id}</td>
+							<td>${ac.number}</td>
+							<td>${ac.name}</td>
+							<td>${ac.sex}</td>
+							<td>${ac.age}</td>
+							<td>${ac.height}</td>
+							<td>${ac.date}</td>
+							<td>${ac.nation}</td>
+							<td>${ac.place}</td>
+							<td>${ac.phone}</td>
+							<td>${ac.email}</td>
+							<td>${ac.political}</td>
+							<td>${ac.department}</td>
+							<td>${ac.post}</td>
+							<td>${ac.entrydate}</td>
+							<td>${ac.workingdate}</td>
+							<td>
+								<a href="AddMessage.html" class="btn btn-danger" >添加</a>
+								<a href="/test2/sta?id=${ac.id}&q=delete" class="btn btn-danger">删除</a>
+								<a href="/test2/sta?id=${ac.id}&q=update" class="btn btn-danger">修改</a>
+							</td>
+						</tr>
+					</c:forEach>
+					<%--     <%--%>
+					<%--       }--%>
+					<%--     %>--%>
+				</table>
+
+				<div>
+					<pager:pager pageNo="${requestScope.pageNo}" recordCount="${requestScope.total}" pageSize="${initParam.pageSize}" url="${path}/sta?q=list"/>
+				</div>
 
 			</div>
 

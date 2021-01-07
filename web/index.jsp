@@ -1041,7 +1041,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 						<li>
 
-							<a href="extra_search.jsp">
+							<a href="/test2/sta?q=list">
 
 							员工信息
 

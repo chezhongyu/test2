@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>login_soft.html</welcome-file>
 </welcome-file-list>
     
     
@@ -95,6 +95,27 @@
         <servlet-name>session</servlet-name>
         <url-pattern>/sess</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>staff</servlet-name>
+        <servlet-class>com.foreknow.controller.StaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>staff</servlet-name>
+        <url-pattern>/sta</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>instaff</servlet-name>
+        <servlet-class>com.foreknow.controller.InsertstaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>instaff</servlet-name>
+        <url-pattern>/insertstaff</url-pattern>
+    </servlet-mapping>
+
 
 
 
