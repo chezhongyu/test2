@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container">
-	<form class="form-horizontal" method="post" action="user">
+	<form class="form-horizontal" method="post" action="insertstaff">
 		<fieldset>
 			<legend align="center">
 				<h1>添加员工信息</h1>
@@ -28,7 +28,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="员工号">
+						   name="number" placeholder="员工号">
 				</div>
 			</div>
 			<div class="form-group">
@@ -44,7 +44,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="性别">
+						   name="sex" placeholder="性别">
 				</div>
 			</div>
 			<div class="form-group">
@@ -52,7 +52,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="年龄">
+						   name="age" placeholder="年龄">
 				</div>
 			</div>
 			<div class="form-group">
@@ -60,7 +60,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="身高">
+						   name="height" placeholder="身高">
 				</div>
 			</div>
 			<div class="form-group">
@@ -68,7 +68,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="出生日期">
+						   name="date" placeholder="出生日期">
 				</div>
 			</div>
 			<div class="form-group">
@@ -76,7 +76,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="民族">
+						   name="nation" placeholder="民族">
 				</div>
 			</div>
 			<div class="form-group">
@@ -84,7 +84,7 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="籍贯">
+						   name="place" placeholder="籍贯">
 				</div>
 			</div>
 			<div class="form-group">
@@ -92,15 +92,15 @@
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="联系电话">
+						   name="phone" placeholder="联系电话">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputName3" class="col-md-4 control-label"> 民族：
+				<label for="inputName3" class="col-md-4 control-label"> 邮箱：
 				</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputName3"
-						   name="name" placeholder="民族">
+						   name="email" placeholder="邮箱">
 				</div>
 			</div>
 			<div class="form-group">
@@ -108,7 +108,7 @@
 					电子邮件： </label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="xxxx@163.com">
+						   name="political" placeholder="xxxx@163.com">
 				</div>
 			</div>
 			<div class="form-group">
@@ -116,15 +116,7 @@
 					政治面貌： </label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="政治面貌">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="inputEmail3" class="col-md-4 control-label">
-					部门： </label>
-				<div class="col-md-4">
-					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="部门">
+						   name="department" placeholder="政治面貌">
 				</div>
 			</div>
 			<div class="form-group">
@@ -132,7 +124,7 @@
 					岗位： </label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="岗位">
+						   name="post" placeholder="岗位">
 				</div>
 			</div>
 			<div class="form-group">
@@ -140,7 +132,7 @@
 					入职日期： </label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="入职日期">
+						   name="entrydate" placeholder="入职日期">
 				</div>
 			</div>
 			<div class="form-group">
@@ -148,13 +140,12 @@
 					参加工作日期： </label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="inputEmail3"
-						   name="email" placeholder="参加工作日期">
+						   name="workingdate" placeholder="参加工作日期">
 				</div>
 			</div>
 			<div class="form-group" align="center">
-				<button type="submit" class="btn btn-primary btn-lg">添加留言
-				</button>
-				<button type="reset" class="btn btn-default btn-lg">重置留言</button>
+				<button type="submit" class="btn btn-primary btn-lg">添加</button>
+				<button type="reset" class="btn btn-default btn-lg">重置</button>
 			</div>
 			<legend align="center"></legend>
 		</fieldset>
