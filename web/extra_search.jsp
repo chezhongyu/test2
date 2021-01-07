@@ -1,25 +1,19 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!-- 
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 2.3.1
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 
-Version: 1.3
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 
-Author: KeenThemes
-
-Website: http://www.keenthemes.com/preview/?theme=metronic
-
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
-
--->
-
+<!-- BEGIN HEAD -->
 
 <head>
 
 	<meta charset="utf-8" />
 
-	<title>Metronic | Admin Dashboard Template</title>
+	<title>Metronic | Extra - Search Results</title>
 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -33,7 +27,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
 
-	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 
 	<link href="media/css/style-metro.css" rel="stylesheet" type="text/css"/>
 
@@ -49,26 +43,19 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<!-- BEGIN PAGE LEVEL STYLES --> 
 
-	<link href="media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="media/css/datepicker.css" />
 
-	<link href="media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+	<link href="media/css/jquery.fancybox.css" rel="stylesheet" />
 
-	<link href="media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
-
-	<link href="media/css/jqvmap.css" rel="stylesheet" type="text/css" media="screen"/>
-
-	<link href="media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="media/css/search.css" rel="stylesheet" type="text/css"/>
 
 	<!-- END PAGE LEVEL STYLES -->
 
 	<link rel="shortcut icon" href="media/image/favicon.ico" />
 
 
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700'>
-
-	<link rel="stylesheet" href="media/css/style1.css">
 	
-	<link rel="stylesheet" href="media/css/style1.css">
+    <link rel="stylesheet" href="../css/xadmin.css">
    
 
 </head>
@@ -91,9 +78,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 				<!-- BEGIN LOGO -->
 
-				<a class="brand" href="index.html">
+				<a class="brand" href="index.jsp">
 
-				<img src="media/image/logo.png" alt="logo"/>
+				<img src="media/image/logo.png" alt="logo" />
 
 				</a>
 
@@ -553,9 +540,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<!-- END HEADER -->
 
-	<!-- BEGIN CONTAINER -->
+	<!-- BEGIN CONTAINER -->   
 
-	<div class="page-container">
+	<div class="page-container row-fluid">
 
 		<!-- BEGIN SIDEBAR -->
 
@@ -597,15 +584,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 				</li>
 
-				<li class="start active ">
+				<li class="start ">
 
-					<a href="index.html">
+					<a href="index.jsp">
 
 					<i class="icon-home"></i> 
 
-					<span class="title">首页</span>
-
-					<span class="selected"></span>
+					<span class="title">Dashboard</span>
 
 					</a>
 
@@ -989,15 +974,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 				</li>
 
-				<li class="">
+				<li class="" >
 
 					<a href="javascript:;">
 
-					<i class="icon-gift"></i> 
+					 <i class="icon-gift"></i> 
 
-					<span class="title">人员调动管理</span>
-
-					<span class="arrow "></span>
+					 <span class="title">人员调动管理</span>
+ 
+	                 <span class="arrow "></span>
 
 					</a>
 
@@ -1007,8 +992,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 							<a href="extra_profile.html">
 
-								部门调动管理
-							</a>
+								部门调动管理</a>
 
 						</li>
 
@@ -1016,36 +1000,32 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 							<a href="extra_faq.html">
 
-								岗位调动管理
-							</a>
+								岗位调动管理</a>
 
 						</li>
-
 					</ul>
 
 				</li>
 
-				<li>
+				<li class="active ">
 
-					<a class="active" href="javascript:;">
+					<a  href="javascript:;">
 
 					<i class="icon-sitemap"></i> 
 
 					<span class="title">员工信息中心</span>
 
-					<span class="arrow "></span>
+					<span class="selected"></span>
+
+					<span class="arrow open"></span>
 
 					</a>
 
 					<ul class="sub-menu">
 
-						<li>
-
-							<a href="extra_search.html">
-
-							员工信息
-
-							</a>
+						<li class="active">
+							
+							<a href="extra_search.jsp">员工信息 </a>
 
 						</li>
 
@@ -1347,13 +1327,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 					<button data-dismiss="modal" class="close" type="button"></button>
 
-					<h3>Widget Settings</h3>
+					<h3>portlet Settings</h3>
 
 				</div>
 
 				<div class="modal-body">
 
-					Widget settings form goes here
+					<p>Here will be a configuration form</p>
 
 				</div>
 
@@ -1459,13 +1439,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 						</div>
 
-						<!-- END BEGIN STYLE CUSTOMIZER -->    
+						<!-- END BEGIN STYLE CUSTOMIZER --> 
 
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 
 						<h3 class="page-title">
 
-							人事管理系统 <small>Personnel management system</small>
+							员工信息 <small>Employee information</small>
 
 						</h3>
 
@@ -1475,27 +1455,21 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 								<i class="icon-home"></i>
 
-								<a href="index.html">Home</a> 
+								<a href="index.jsp">Home</a>
 
 								<i class="icon-angle-right"></i>
 
 							</li>
 
-							<li><a href="#">首页</a></li>
+							<li>
 
-							<li class="pull-right no-text-shadow">
+								<a href="#">员工信息中心</a>
 
-								<div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
-
-									<i class="icon-calendar"></i>
-
-									<span></span>
-
-									<i class="icon-angle-down"></i>
-
-								</div>
+								<i class="icon-angle-right"></i>
 
 							</li>
+
+							<li><a href="extra_search.jsp">员工信息</a></li>
 
 						</ul>
 
@@ -1505,29 +1479,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 				</div>
 
-				<!-- END PAGE HEADER-->
-
-				<div id="dashboard">
-
-					
-               <div id="app">
-	               <svg ref="svg" @mousemove="doThing" @touchmove="doThingTouch" width="100%" height="100%"
-	                      xmlns="http://www.w3.org/2000/svg">
-	                      <rect x="0" y="0" width="100%" height="100%" fill="#0D0D0D" />
-	                      <star v-once v-for="star in 100" />
-	                      <dynamic-circle :class="`circle-${index}`" :index="index" :origin="origin" v-for="(circles, index) in 100" />
-	                      <shooting-star />
-	              </svg>
-               </div>
-				</div>
 
 			</div>
 
-			<!-- END PAGE CONTAINER-->    
+			<!-- END PAGE CONTAINER--> 
 
 		</div>
 
-		<!-- END PAGE -->
+		<!-- END PAGE -->    
 
 	</div>
 
@@ -1589,75 +1548,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<!-- END CORE PLUGINS -->
 
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="media/js/bootstrap-datepicker.js"></script>
 
-	<script src="media/js/jquery.vmap.js" type="text/javascript"></script>   
+	<script src="media/js/jquery.fancybox.pack.js"></script>
 
-	<script src="media/js/jquery.vmap.russia.js" type="text/javascript"></script>
+	<script src="media/js/app.js"></script>
 
-	<script src="media/js/jquery.vmap.world.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.vmap.europe.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.vmap.germany.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.vmap.usa.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.vmap.sampledata.js" type="text/javascript"></script>  
-
-	<script src="media/js/jquery.flot.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.flot.resize.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.pulsate.min.js" type="text/javascript"></script>
-
-	<script src="media/js/date.js" type="text/javascript"></script>
-
-	<script src="media/js/daterangepicker.js" type="text/javascript"></script>     
-
-	<script src="media/js/jquery.gritter.js" type="text/javascript"></script>
-
-	<script src="media/js/fullcalendar.min.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.easy-pie-chart.js" type="text/javascript"></script>
-
-	<script src="media/js/jquery.sparkline.min.js" type="text/javascript"></script>  
-
-	<!-- END PAGE LEVEL PLUGINS -->
-
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-
-	<script src="media/js/app.js" type="text/javascript"></script>
-
-	<script src="media/js/index.js" type="text/javascript"></script>    
+	<script src="media/js/search.js"></script>     
 	
-	<script src='media/js/vue.min.js'></script>
-
-    <script src="media/js/script.js"></script>
-
-	<!-- END PAGE LEVEL SCRIPTS -->  
+	<script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/xadmin.js"></script>
 
 	<script>
 
 		jQuery(document).ready(function() {    
 
-		   App.init(); // initlayout and core plugins
+		   App.init();
 
-		   Index.init();
-
-		   Index.initJQVMAP(); // init index page's custom scripts
-
-		   Index.initCalendar(); // init index page's custom scripts
-
-		   Index.initCharts(); // init index page's custom scripts
-
-		   Index.initChat();
-
-		   Index.initMiniCharts();
-
-		   Index.initDashboardDaterange();
-
-		   Index.initIntro();
+		   Search.init();
 
 		});
 
